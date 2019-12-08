@@ -1,4 +1,4 @@
-package com.ls.java8.lambda;
+package com.ls.java8.lambda.EbuiltinFuncInterfaces;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -6,6 +6,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+//4 types : Predicate, Function, Supplier, Consumer
 public class BuiltInInterfacesUse {
 
     public static void main(String[] args) {
@@ -33,13 +34,13 @@ public class BuiltInInterfacesUse {
 
         //Suppliers - Suppliers produce a result of a given generic type.
         //Unlike Functions, Suppliers don't accept arguments.
-        Supplier<Person> personSupplier = Person::new;
-        System.out.println(personSupplier.get());
-        System.out.println(personSupplier.get().firstName); //null
+        Supplier<Employee> employeeSupplier = Employee::new;
+        System.out.println(employeeSupplier.get());
+        System.out.println(employeeSupplier.get().firstName); //null
 
         //Consumers - Consumers represent operations to be performed on a single input argument.
-        Consumer<Person> personConsumer = (p) -> System.out.println("hello " + p.firstName);
-        personConsumer.accept(new Person("Hrithik", "Roshan"));//hello Hrithik
+        Consumer<Employee> employeeConsumer = (p) -> System.out.println("hello " + p.firstName);
+        employeeConsumer.accept(new Employee("Hrithik", "Roshan"));//hello Hrithik
 
 
     }

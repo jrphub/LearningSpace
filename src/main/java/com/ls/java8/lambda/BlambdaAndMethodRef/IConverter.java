@@ -1,4 +1,4 @@
-package com.ls.java8.lambda;
+package com.ls.java8.lambda.BlambdaAndMethodRef;
 
 @FunctionalInterface
 public interface IConverter<F, T> {

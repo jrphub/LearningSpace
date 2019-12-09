@@ -2,11 +2,6 @@ package com.ls.java8.lambda.CfunctionalInterfaces;
 
 public class UseMyFunctionalInterface {
 
-    public static int instanceMethod(int a) {
-        System.out.println("instanceMethod() is called ");
-        return a * 5;
-    }
-
     public static void main(String[] args) {
         //implementation 1
         MyFunctionalInterface impl1 = (num) -> num+5;

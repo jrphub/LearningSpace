@@ -17,16 +17,18 @@ public class Converters {
         //impl2
         //for static method valueOf
         IConverter<String, Double> strToDoubleConverter2 = Double::valueOf;
-        Double strToDoubleVal2 = strToDoubleConverter.convert("01");
+        Double strToDoubleVal2 = strToDoubleConverter2.convert("01");
         System.out.println("strToDoubleVal2 : " + strToDoubleVal2);
 
-        //Method Reference for object method
-        //impl3
+        //Method Reference for object/instance method
         //returns first character as String
         SomethingForMethodRef objMethodRef = new SomethingForMethodRef();
+        //impl 3.1
         IConverter<String, String> startsWithConverter = objMethodRef::startsWith;
         System.out.println("Object Method call : " + startsWithConverter.convert("Hello"));
-
+        //impl 3.2
+        IConverter<Integer, Integer> startsWithConverter2 = objMethodRef::startsWith;
+        System.out.println("Object Method call : " + startsWithConverter2.convert(1234));
 
     }
 }

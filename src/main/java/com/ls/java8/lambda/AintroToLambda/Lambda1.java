@@ -16,7 +16,7 @@ public class Lambda1 {
         });
         System.out.println("1 - " + empList);
 
-        //2nd
+        //2nd -In Java8, String class has compareToIgnoreCase and compareTo methods in built
         Collections.sort(empList, (String emp1, String emp2) -> {
             return emp1.compareToIgnoreCase(emp2);
         });
@@ -27,7 +27,7 @@ public class Lambda1 {
         Collections.sort(empList, (emp1, emp2) -> emp1.compareToIgnoreCase(emp2));
         System.out.println("3 - " + empList );
 
-        //4th
+        //4th - List interface has sort method itself in Java 8
         empList.sort((emp1,emp2) -> emp1.compareToIgnoreCase(emp2));
         System.out.println("4 - " + empList);
 

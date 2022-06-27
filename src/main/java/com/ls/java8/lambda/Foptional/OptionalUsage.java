@@ -3,7 +3,7 @@ package com.ls.java8.lambda.Foptional;
 import java.util.Optional;
 
 public class OptionalUsage {
-    //Optional is an utility to prevent NPE
+    //Optional is a utility to prevent NPE
     //It's a simple container for a value which may be null or not null
     //instead of returning null, a method can return an Optional in Java8
     public static void main(String[] args) {

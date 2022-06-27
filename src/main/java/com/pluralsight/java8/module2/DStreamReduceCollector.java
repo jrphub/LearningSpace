@@ -38,6 +38,7 @@ public class DStreamReduceCollector {
                         DPerson::getAge
                 )
         );
+        collect.forEach((l1, l2) -> System.out.println(l2));
 
         System.out.println(collect);
 

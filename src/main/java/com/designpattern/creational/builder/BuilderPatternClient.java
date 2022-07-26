@@ -32,8 +32,8 @@ class Vehicle {
     //Builder class is static inner class
     public static class VehicleBuilder {
         //required parameter
-        private String engine;
-        private int wheel;
+        private final String engine;
+        private final int wheel;
         //optional parameter
         private int airbags;
 

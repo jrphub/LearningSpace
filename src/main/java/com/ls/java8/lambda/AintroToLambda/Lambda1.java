@@ -31,6 +31,9 @@ public class Lambda1 {
         empList.sort((emp1,emp2) -> emp1.compareToIgnoreCase(emp2));
         System.out.println("4 - " + empList);
 
+        //5th - Method reference
+        empList.sort(String::compareToIgnoreCase);
+        System.out.println("5 - " + empList);
 
     }
 }

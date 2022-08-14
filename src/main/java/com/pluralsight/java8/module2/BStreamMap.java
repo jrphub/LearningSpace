@@ -1,6 +1,7 @@
 package com.pluralsight.java8.module2;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -31,7 +32,7 @@ public class BStreamMap {
                 .forEach(System.out::println);
 
         //Flat map
-        Function<List<Integer>, Stream<Integer>> flatMapper = l -> l.stream();
+        Function<List<Integer>, Stream<Integer>> flatMapper = Collection::stream;//l -> l.stream()
 
         list.stream()
                 .flatMap(flatMapper)

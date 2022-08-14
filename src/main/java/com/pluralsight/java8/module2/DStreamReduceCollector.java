@@ -12,7 +12,7 @@ public class DStreamReduceCollector {
 
     public static void main(String[] args) throws FileNotFoundException {
         List<DPerson> persons = new ArrayList<>();
-
+        System.out.println("Populating persons from file...");
         try (
                 BufferedReader reader = new BufferedReader(
                         new FileReader("src/main/resources/person.txt"));
@@ -29,18 +29,20 @@ public class DStreamReduceCollector {
             throw new RuntimeException(e);
         }
 
-        //To get the younger person older than 20
+        System.out.println("To get the younger person older than 20 ...");
+
         Optional<DPerson> minGt20 = persons.stream().filter(l -> l.getAge() > 20).min(Comparator.comparing(DPerson::getAge));
         System.out.println(minGt20);
 
+        System.out.println("Grouping by age ...");
         Map<Integer, List<DPerson>> collect = persons.stream().collect(
                 Collectors.groupingBy(
                         DPerson::getAge
                 )
         );
-        collect.forEach((l1, l2) -> System.out.println(l2));
+        //collect.forEach((l1, l2) -> System.out.println(l2));
 
-        System.out.println(collect);
+        System.out.println("groupByAge: " + collect);
 
         Map<Integer, Set<String>> collect1 = persons.stream().collect(
                 Collectors.groupingBy(
@@ -52,7 +54,7 @@ public class DStreamReduceCollector {
                 )
         );
 
-        System.out.println(collect1);
+        System.out.println("groupByAgeRefactored: " + collect1);
 
         Map<Integer, String> collect2 = persons.stream().collect(
                 Collectors.groupingBy(
@@ -63,6 +65,6 @@ public class DStreamReduceCollector {
                         )
                 )
         );
-        System.out.println(collect2);
+        System.out.println("groupByAgeRefactoredMore :" + collect2);
     }
 }

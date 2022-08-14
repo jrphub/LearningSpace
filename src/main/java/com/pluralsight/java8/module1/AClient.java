@@ -33,8 +33,8 @@ public class AClient {
 
         //3 - Using Lambda Expression
         System.out.println("Using Lamda expression>>>>");
-        //Lamda expression is another way to write anonymous class, more readable
-        //Type of Lmbda expression : Functional Interface
+        //Lambda expression is another way to write anonymous class, more readable
+        //Type of Lambda expression : Functional Interface
         //Functional Interface : An interface with only one abstract method
         //Example :
         //Runnable has run()

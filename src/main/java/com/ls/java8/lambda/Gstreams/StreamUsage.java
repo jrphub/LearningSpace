@@ -28,7 +28,7 @@ public class StreamUsage {
         //filter
         stringCollection.stream()
                 .filter((s) -> s.startsWith("a")) //predicate
-                .forEach(System.out::print); //aaa2 aaa1
+                .forEach(System.out::print); //aaa2 aaa1 //consumer
 
         //sorted
         stringCollection.stream()

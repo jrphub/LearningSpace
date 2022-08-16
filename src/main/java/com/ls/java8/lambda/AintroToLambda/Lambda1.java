@@ -18,7 +18,7 @@ public class Lambda1 {
 
         //2nd -In Java8, String class has compareToIgnoreCase and compareTo methods in built
         empList.sort((String emp1, String emp2) -> {
-            return emp1.compareToIgnoreCase(emp2);
+            return emp1.compareToIgnoreCase(emp2);//emp1.compareToIgnoreCase(emp2)
         });
 
         System.out.println("2 - " + empList);

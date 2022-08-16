@@ -59,40 +59,40 @@ A **functional interface** is an interface that contains only one abstract metho
     - Function -> BiFunction, Unary Operator, Binary Operator : apply()
     - Supplier : get()
 
-    #### Consumer
+#### Consumer
 
-    ```java
-    Consumer<Integer> consumer = (value) -> System.out.println(value);
-    
-    consumer.accept(5);
-    ```
+```java
+Consumer<Integer> consumer = (value) -> System.out.println(value);
 
-    #### Predicate
+consumer.accept(5);
+```
 
-    ```java
-    Predicate predicate = (value) -> value != null;
-    ```
+#### Predicate
 
-    #### Function
+```java
+Predicate predicate = (value) -> value != null;
+```
 
-    A function is a type of functional interface in Java that receives only a single argument and returns a value after the required processing.
+#### Function
 
-    ##### Bi-Function
+A function is a type of functional interface in Java that receives only a single argument and returns a value after the required processing.
 
-    ```java
-    @FunctionalInterface
-    public interface BiFunction<T, U, R> 
-    {
-     
-       R apply(T t, U u);
-        .......
-     
-    }
-    ```
+##### 	Bi-Function
+
+```java
+@FunctionalInterface
+public interface BiFunction<T, U, R> 
+{
+ 
+   R apply(T t, U u);
+    .......
+ 
+}
+```
 
 ​		T & U are inputs and there is only one output R
 
-##### 		Unary Operator
+##### 			Unary Operator
 
 ```java
 @FunctionalInterface
@@ -104,7 +104,7 @@ public interface UnaryOperator<T> extends Function<T, U>
 
 ​		It accepts only one argument and returns a single argument. Both input and output values must be identical and of the same type.		
 
-##### 		Binary Operator
+##### 			Binary Operator
 
 ```java
 @FunctionalInterface
@@ -134,3 +134,14 @@ T.get();
  
 }
 ```
+
+### Lambda Expression
+
+Lambda expressions basically express instances of functional interfaces.
+
+- lambda expressions provide below functionalities.
+  - Enable to treat functionality as a method argument, or code as data.
+  - A function that can be created without belonging to any class.
+  - A lambda expression can be passed around as if it was an object and executed on demand.
+
+//Add Program : https://www.geeksforgeeks.org/lambda-expressions-java-8/

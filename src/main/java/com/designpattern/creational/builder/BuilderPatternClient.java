@@ -1,5 +1,10 @@
 package com.designpattern.creational.builder;
 
+/**
+ * Builder pattern
+ *
+ * Use the builder pattern when you have several variations of the same object, which needs to be created repeatedly
+ */
 class Vehicle {
 
     //required parameters

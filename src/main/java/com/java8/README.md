@@ -71,6 +71,8 @@ consumer.accept(5);
 
 ```java
 Predicate predicate = (value) -> value != null;
+
+predicate.test(5);
 ```
 
 #### Function
@@ -144,4 +146,84 @@ Lambda expressions basically express instances of functional interfaces.
   - A function that can be created without belonging to any class.
   - A lambda expression can be passed around as if it was an object and executed on demand.
 
-//Add Program : https://www.geeksforgeeks.org/lambda-expressions-java-8/
+```java
+public class CLambdaExpressionTwoArgs {
+
+    @FunctionalInterface
+    interface FunctInterface1 {
+        int operation(int a, int b);
+    }
+
+    @FunctionalInterface
+    interface FuncInterface2 {
+        void sayMessage(String msg);
+    }
+
+    private int operate(int a, int b, FunctInterface1 obj1) {
+        return obj1.operation(a, b);
+    }
+
+    public static void main(String[] args) {
+        FunctInterface1 add = (x, y) -> x + y; //Integer::sum
+        FunctInterface1 multiply = (x, y) -> x * y;
+
+        CLambdaExpressionTwoArgs test = new CLambdaExpressionTwoArgs();
+        System.out.println("Addition : " + test.operate(5, 2, add));
+        System.out.println("Multiplication : " + test.operate(5, 2, multiply));
+
+        FuncInterface2 fobj = m -> System.out.println(m); //System.out::println
+        fobj.sayMessage("calculation completed");
+    }
+
+}
+```
+
+**Creating Thread using Lambda Expression**
+
+```java
+public class DThreadLambda {
+    public static void main(String[] args) {
+        // Creating Lambda expression for run() method in
+        // functional interface "Runnable"
+        Runnable runnable = () -> {
+            Thread.currentThread().setName("Test Thread");
+            System.out.println(Thread.currentThread().getName() + " is running");
+        };
+
+        // Instantiating Thread class by passing Runnable
+        // reference to Thread constructor
+        Thread thread = new Thread(runnable);
+
+        //Starting the thread
+        thread.start();
+    }
+}
+```
+
+**Checking if String contains only Alphabet**
+
+```java
+public class ECheckAllString {
+
+    static Predicate<String> p = ECheckAllString::test;
+
+    //sol2 : static Predicate<String> p = s -> s.matches("^[a-zA-Z]*$");
+
+    public static boolean isAllString(String str) {
+        //sol1 : return (str != null) && (str != "") && str.chars().allMatch(Character::isLetter);
+        return (str != null) && (str != "") && p.test(str);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("For XYZ :" + ECheckAllString.isAllString("XYZ")); //true
+        System.out.println("For XYZ12 :" + ECheckAllString.isAllString("XYZ12")); //false
+        System.out.println("For null :" + ECheckAllString.isAllString(null)); //false
+        System.out.println("For empty :" + ECheckAllString.isAllString("")); //false
+    }
+
+    private static boolean test(String s) {
+        return s.matches("^[a-zA-Z]*$");
+    }
+}
+```
+

@@ -1,4 +1,4 @@
-package com.designpattern.creational.builder;
+package com.designpattern.creational.builder.ex1;
 
 /**
  * Builder pattern

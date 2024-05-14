@@ -12,10 +12,10 @@ public class HFixRaceWithLock {
             try{
 //                lock.lock(); // blocking call
                 int c = count;
-                System.out.println("Before. "+count + ". Thread id: "+Thread.currentThread().getId());
-                count = c + 1; // not atomic
-                System.out.println("After. "+count + ". Thread id: "+Thread.currentThread().getId());
-            } finally{
+				System.out.println("Before. "+count + ". Thread id: "+Thread.currentThread().getId());
+				count = c + 1; // not atomic
+				System.out.println("After. "+count + ". Thread id: "+Thread.currentThread().getId());
+			} finally{
                 lock.unlock();// return the lock
             }
         }else{

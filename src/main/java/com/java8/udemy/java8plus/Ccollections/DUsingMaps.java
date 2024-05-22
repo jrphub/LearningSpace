@@ -37,7 +37,7 @@ public class DUsingMaps {
         //     BiConsumer<T,U>     void accept(T t, U u)
         map.forEach((k, v) -> System.out.println( k + " maps to "+ v));
 
-        // Set<Map.Entry<K,​V> entrySet() - Map.Entry encapsulates a key-value pair.
+        // Set<Map.Entry<K,V> entrySet() - Map.Entry encapsulates a key-value pair.
         // go from a Map to a Set (an official Collection)
         // Chris -> 33
         // John  -> 18

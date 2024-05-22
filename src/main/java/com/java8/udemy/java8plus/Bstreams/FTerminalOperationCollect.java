@@ -8,6 +8,11 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Important
+ *
+ * Revise
+ */
 public class FTerminalOperationCollect {
 	public static void main(String[] args) {
 		Stream<String> companies1 = Stream.of("microsoft", "google", "amazon");

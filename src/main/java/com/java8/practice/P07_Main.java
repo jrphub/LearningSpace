@@ -1,20 +1,25 @@
 package com.java8.practice;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Given a list of integers, sort all the values present in it using Stream functions?
+ * Given an integer array nums,
+ * return true if any value appears at least twice in the array,
+ * and return false if every element is distinct.
  * https://blog.devgenius.io/java-8-coding-and-programming-interview-questions-and-answers-62512c44f062
  */
-public class P06_Main {
+public class P07_Main {
 	public static void main(String[] args) {
-		List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
-		myList.stream()
-			.sorted(Collections.reverseOrder())
-			.forEach(System.out::println);
+		int[] nums = {1, 2, 3, 1};
+		List<Integer> myList = Arrays.stream(nums)
+			.boxed()
+			.collect(Collectors.toList());
+		Set<Integer> mySet = new HashSet<>(myList);
+		if (myList.size() > mySet.size()) {
+			System.out.println(true);
+		} else {
+			System.out.println(false);
+		}
 	}
 }

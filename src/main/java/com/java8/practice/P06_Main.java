@@ -2,9 +2,7 @@ package com.java8.practice;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Given a list of integers, sort all the values present in it using Stream functions?

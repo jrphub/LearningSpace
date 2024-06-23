@@ -35,6 +35,14 @@ public class FP07FilesOperation {
 			.collect(Collectors.toMap(x -> x, y -> 1L, Long::sum));
 		System.out.println(wordCountMap);
 
+		//sort by value in reverse order
+		wordStream
+			.collect(
+				Collectors.groupingBy(Function.identity(), HashMap::new, Collectors.counting()))
+			.entrySet()
+			.stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+			.forEach(System.out::println);
+
 
 
 

@@ -10,7 +10,9 @@ public class P04_Main {
 	public static void main(String[] args) {
 		List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
 		myList.stream()
+			//.max((x,y) -> x.compareTo(y))
 			.max(Integer::compare)
 			.ifPresent(System.out::println);
+
 	}
 }

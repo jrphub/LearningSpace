@@ -10,13 +10,13 @@ public class ClientHackerOne {
     }
 
     private static void createMultipleInstanceUsingSerialization() throws IOException, ClassNotFoundException {
-        LazySingleton instance1 = LazySingleton.getInstance();
+        DLazySingleton instance1 = DLazySingleton.getInstance();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(Files.newOutputStream(Paths.get("tmp.obj")));
         objectOutputStream.writeObject(instance1);
         objectOutputStream.close();
 
         ObjectInputStream objectInputStream = new ObjectInputStream(Files.newInputStream(Paths.get("tmp.obj")));
-        LazySingleton instance2 = (LazySingleton) objectInputStream.readObject();
+        DLazySingleton instance2 = (DLazySingleton) objectInputStream.readObject();
         objectInputStream.close();
 
         System.out.println("Object1 : " + instance1.hashCode());

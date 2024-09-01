@@ -9,12 +9,12 @@ public class ClientHackerTwo {
     }
 
     private static void createMultipleInstanceUsingReflection() throws InvocationTargetException, InstantiationException, IllegalAccessException {
-        Constructor<?>[] declaredConstructors = LazySingleton.class.getDeclaredConstructors();
+        Constructor<?>[] declaredConstructors = DLazySingleton.class.getDeclaredConstructors();
         Constructor<?> constructor = declaredConstructors[0];
         constructor.setAccessible(true);
 
-        LazySingleton instance1 = (LazySingleton) constructor.newInstance();
-        LazySingleton instance2 = LazySingleton.getInstance();
+        DLazySingleton instance1 = (DLazySingleton) constructor.newInstance();
+        DLazySingleton instance2 = DLazySingleton.getInstance();
 
         System.out.println("Object1 : " + instance1.hashCode());
         System.out.println("Object2 : " + instance2.hashCode());

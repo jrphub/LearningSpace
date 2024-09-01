@@ -1,4 +1,4 @@
-package com.designpattern.creational.factory;
+package com.designpattern.creational.factory.example1;
 
 public class LinuxOs extends AbstractOs {
     @Override

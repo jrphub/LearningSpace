@@ -1,7 +1,4 @@
-package com.designpattern.creational.factory;
-
-import static com.designpattern.creational.factory.OS_TYPE.LINUX;
-import static com.designpattern.creational.factory.OS_TYPE.WINDOWS;
+package com.designpattern.creational.factory.example1;
 
 public class MyApp {
     public String getDirectoryType(OS_TYPE osType) {

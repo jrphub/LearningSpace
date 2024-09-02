@@ -1,24 +1,14 @@
 package com.designpattern.creational.factory.example2;
 
-public class LogisticsAppClient {
 
-	private static Transport transport;
+import java.util.Optional;
+
+public class LogisticsAppClient {
 
 	public static void main(String[] args) {
 		//getTransport("road");
-		getTransport("sea");
-		deliverCargo();
-	}
-
-	private static void getTransport(String logisticsType) {
-		if ("road".equals(logisticsType)) {
-			transport = new RoadLogistics().createTransport();
-		} else if ("sea".equals(logisticsType)) {
-			transport = new SeaLogistics().createTransport();
-		}
-	}
-
-	private static void deliverCargo() {
-		transport.delivery();
+		Optional<Transport> transportOptional = LogisticsTransportFactory.getTransport("sea");
+		transportOptional.ifPresentOrElse(Transport::delivery,
+			() -> System.out.println("Invalid business"));
 	}
 }

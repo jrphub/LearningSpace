@@ -1,15 +1,16 @@
 package com.designpattern.creational.singleton;
 
 /**
- * Singleton design pattern
- * Objective : To create only one instance of a class
+ * <h3>Singleton design pattern</h3>
+ * <br/>
+ * <b>Objective</b> : To create only one instance of a class using Eager initialization
  * <p>
- * Problem : waste resources
+ * <b>Problem of this approach</b> : This wastes resources
  * if singleton instance creation is a heavy process
  * or
  * instance is never used by the client application
- *
- * Solution : Bill Pugh Singleton
+ *<br/>
+ * <b>what's the Solution?</b> : Bill Pugh Singleton (Check next)
  */
 public class AEagerSingleton {
 

@@ -26,8 +26,5 @@ public class ClientHackerTwo {
         System.out.println("Object1 : " + singleton1.hashCode());
         System.out.println("Object2 : " + singleton2.hashCode());
 
-
-
-
     }
 }

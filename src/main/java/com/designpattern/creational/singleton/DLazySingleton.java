@@ -3,10 +3,11 @@ package com.designpattern.creational.singleton;
 import java.io.Serializable;
 
 /**
- * Singleton design pattern
- * Objective : To create only one instance of a class
- *
- * Implementation
+ * <h3>Singleton design pattern</h3>
+ * <br/>
+ * <b>Objective</b> : To create only one instance of a class
+ *<br/>
+ * <b>Implementation</b>
  * 1 - Lazy Initialization - Problem : Multi-thread failure
  * 2 - Thread-safe Singleton - Problem : Slower due to synchronize block
  * 3 - Double-checked locking - Using Volatile keyword
@@ -37,8 +38,9 @@ public class DLazySingleton implements Serializable {
         return instance;
     }
 
+
     //To protect from ClientHackerOne who uses Serialization to create multiple instance
-    protected Object readResolve() {
+	protected Object readResolve() {
         return instance;
     }
 }

@@ -2,17 +2,21 @@ package com.designpattern.behavioural.observerPattern;
 
 public class Youtube {
 
-    public static void main(String[] args) {
-        Channel ch = new Channel();
-        Subscriber s1 = new Subscriber("Sumit");
-        Subscriber s2 = new Subscriber("Rahul");
+	public static void main(String[] args) {
+		ChannelObservable channel = new ChannelObservable();
 
-        ch.subscribe(s1);;
-        ch.subscribe(s2);
+		ChannelSubscriber s1 = new ChannelSubscriber("X", channel);
+		ChannelSubscriber s2 = new ChannelSubscriber("Y", channel);
 
-        s1.subscribeChannel(ch);
-        s2.subscribeChannel(ch);
+		channel.addSubscriber(s1);
+		channel.addSubscriber(s2);
 
-        ch.upload("Design Pattern in Java");
-    }
+		channel.upload(new Video("Design Pattern in Java",
+			"All about design patterns"));
+
+		channel.removeSubscriber(s2);
+
+		channel.upload(new Video("Java8 functional programming",
+			"All about functional Programming"));
+	}
 }

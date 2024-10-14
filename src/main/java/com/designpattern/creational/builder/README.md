@@ -1,5 +1,7 @@
 ## Builder Pattern
 
+**Builder** is a creational design pattern that lets you construct complex objects step by step.
+
 The builder design pattern helps separating the construction of complex objects from the context where they are needed.
 
 *Use the builder pattern when you have several variations of the same object, which needs to be created repeatedly.*

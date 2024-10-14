@@ -1,4 +1,4 @@
-package com.dsa;
+package com.dsa.ESearching;
 
 public class BinarySearchIterativeDemo {
 	public static void main(String[] args) {

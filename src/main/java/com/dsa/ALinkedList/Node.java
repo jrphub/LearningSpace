@@ -1,0 +1,28 @@
+package com.dsa.ALinkedList;
+
+public class Node<T> {
+	T data;
+	Node<T> next;
+
+	public Node(T data) {
+		this.data = data;
+		this.setNext(null);
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public Node<T> getNext() {
+		return next;
+	}
+
+	public void setNext(Node<T> next) {
+		this.next = next;
+	}
+
+	@Override
+	public String toString() {
+		return this.getData().toString();
+	}
+}

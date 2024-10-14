@@ -1,4 +1,4 @@
-package com.dsa;
+package com.dsa.DSorting;
 
 
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 //Complexity : O(nlog n)
 //Worst case : O(n2) // when the array is already sorted
-public class QuickSortDemo {
+public class EQuickSortDemo {
 
 	public static void main(String[] args) {
 		int[] arr = new int[]{10, 16, 8, 12, 15, 6, 3, 9, 5};
@@ -60,6 +60,7 @@ public class QuickSortDemo {
 
 	}
 
+	// helper methods
 	private static void printArr(int[] arr) {
 		List<Integer> intList = IntStream.of(arr).boxed().collect(Collectors.toList());
 		System.out.println(intList);

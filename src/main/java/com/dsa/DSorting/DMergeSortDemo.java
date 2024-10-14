@@ -1,4 +1,4 @@
-package com.dsa;
+package com.dsa.DSorting;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 
 // Complexity = O(nlog n)
 // There is n space more needed due to divide phase
-public class MergeSortDemo {
+public class DMergeSortDemo {
 
 	public static void main(String[] args) {
 		int[] arr = new int[]{5, 4, 6, 2, 1, 10, 7, 3, 8, 9};

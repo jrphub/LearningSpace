@@ -1,4 +1,4 @@
-package com.dsa;
+package com.dsa.ESearching;
 
 public class BinarySearchRecursiveDemo {
 	public static void main(String[] args) {
